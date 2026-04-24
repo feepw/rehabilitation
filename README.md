@@ -10,11 +10,13 @@ Like other knowledge-documentation repositories, this repository mainly stores:
 
 - The history of computer evolution and
 
-## Development Environment and Dependencies
+## Development Environment and References
 
 - Programming language: C++
 
-- Dependency management: [vcpkg](https://vcpkg.io)
+- [CMake](https://cmake.org)
+
+- [C++ Reference](https://en.cppreference.com)
 
 ## Miscellaneous Thoughts
 
