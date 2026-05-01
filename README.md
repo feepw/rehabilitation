@@ -16,6 +16,8 @@ Like other knowledge-documentation repositories, this repository mainly stores:
 
 - Dependency management: [vcpkg](https://vcpkg.io)
 
+- [C++ Reference](https://en.cppreference.com)
+
 ## Miscellaneous Thoughts
 
 Since the major breakthroughs in AI (or rather, LLM) technology in 2022, more and more enthusiasts have begun to claim that humans no longer need to write code by hand.
