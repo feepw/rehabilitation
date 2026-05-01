@@ -19,6 +19,6 @@ TEST(FibonacciTests, TestBasicSequences) {
       {10, 55}
   };
   for (auto ci = data.cbegin(), ce = data.cend(); ci != ce; ci++) {
-    ASSERT_EQ(fibonacci(ci->first), ci->second);
+    ASSERT_EQ(rehabilitation::fibonacci(ci->first), ci->second);
   }
 }

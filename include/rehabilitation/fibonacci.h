@@ -1,5 +1,10 @@
+#ifndef REHABILITATION_FIBONACCI_H
+#define REHABILITATION_FIBONACCI_H
+
 #include <cstdint>
 #include <stdexcept>
+
+namespace rehabilitation {
 
 constexpr std::uint32_t fibonacci(std::uint32_t x) {
   if (x == 0 || x == 1) {
@@ -18,3 +23,7 @@ constexpr std::uint32_t fibonacci(std::uint32_t x) {
   }
   return ret;
 }
+
+}  // namespace rehabilitation
+
+#endif  // REHABILITATION_FIBONACCI_H
