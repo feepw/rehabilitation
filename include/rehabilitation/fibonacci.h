@@ -18,7 +18,7 @@ constexpr std::uint32_t fibonacci(std::uint32_t x) {
     pre = ret;
     ret += tmp;
     if (ret < pre) {
-      throw std::range_error("fibonacci calculation caused overflow");
+      throw std::overflow_error("fibonacci calculation caused overflow");
     }
   }
   return ret;

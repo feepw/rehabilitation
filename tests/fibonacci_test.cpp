@@ -24,5 +24,5 @@ TEST(FibonacciTests, TestBasicSequences) {
 }
 
 TEST(FibonacciTests, TestException) {
-  ASSERT_THROW(rehabilitation::fibonacci(49), std::range_error);
+  ASSERT_THROW(rehabilitation::fibonacci(49), std::overflow_error);
 }
