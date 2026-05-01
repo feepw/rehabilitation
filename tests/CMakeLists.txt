@@ -19,7 +19,6 @@ include(GoogleTest)
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} TESTING_SOURCE_FILES)
 add_executable(rehabilitation_tests)
 target_sources(rehabilitation_tests PRIVATE ${TESTING_SOURCE_FILES})
-target_compile_features(rehabilitation_tests PRIVATE cxx_std_17)
 target_include_directories(rehabilitation_tests PRIVATE .)
 target_link_libraries(rehabilitation_tests PRIVATE rehabilitation gtest_main)
 

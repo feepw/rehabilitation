@@ -23,6 +23,7 @@ target_sources(rehabilitation
     FILES
       include/rehabilitation/fibonacci.h
 )
+target_compile_features(rehabilitation INTERFACE cxx_std_14)
 
 if (BUILD_TESTING)
   include(CTest)
