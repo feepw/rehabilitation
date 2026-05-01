@@ -1,11 +1,12 @@
 #include <unordered_map>
+#include <limits>
 
 #include "gtest/gtest.h"
 
 #include "rehabilitation/fibonacci.h"
 
 TEST(FibonacciTests, TestBasicSequences) {
-  const std::unordered_map<std::uint32_t, std::uint32_t> data{
+  const std::unordered_map<int, int> data{
       {0, 0},
       {1, 1},
       {2, 1},
@@ -24,5 +25,8 @@ TEST(FibonacciTests, TestBasicSequences) {
 }
 
 TEST(FibonacciTests, TestException) {
-  ASSERT_THROW(rehabilitation::fibonacci(49), std::overflow_error);
+  EXPECT_THROW(rehabilitation::fibonacci(-1), std::invalid_argument);
+  EXPECT_THROW(rehabilitation::fibonacci<std::uint16_t>(
+                   std::numeric_limits<std::int16_t>::max()),
+               std::overflow_error);
 }

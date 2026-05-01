@@ -1,19 +1,22 @@
 #ifndef REHABILITATION_FIBONACCI_H
 #define REHABILITATION_FIBONACCI_H
 
-#include <cstdint>
 #include <stdexcept>
 
 namespace rehabilitation {
 
-constexpr std::uint32_t fibonacci(std::uint32_t x) {
+template <typename RESULT_TYPE = uint, typename INPUT_TYPE>
+constexpr RESULT_TYPE fibonacci(INPUT_TYPE x) {
+  if (x < 0) {
+    throw(std::invalid_argument("fibonacci forbid negative input"));
+  }
   if (x == 0 || x == 1) {
     return x;
   }
 
   // start at x = 2
-  std::uint32_t ret = 1;
-  for (std::uint32_t pre = 1, tmp = 0; x > 2; x--) {
+  RESULT_TYPE ret = 1;
+  for (RESULT_TYPE pre = 1, tmp = 0; x > 2; x--) {
     tmp = pre;
     pre = ret;
     ret += tmp;
