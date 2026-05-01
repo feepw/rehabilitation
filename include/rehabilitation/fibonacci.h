@@ -5,7 +5,7 @@
 
 namespace rehabilitation {
 
-template <typename RESULT_TYPE = uint, typename INPUT_TYPE>
+template <typename RESULT_TYPE = unsigned int, typename INPUT_TYPE>
 constexpr RESULT_TYPE fibonacci(INPUT_TYPE x) {
   if (x < 0) {
     throw(std::invalid_argument("fibonacci forbid negative input"));
