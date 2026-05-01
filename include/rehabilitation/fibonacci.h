@@ -14,7 +14,7 @@ constexpr RESULT_TYPE fibonacci(INPUT_TYPE x) {
     return x;
   }
 
-  // start at x = 2
+  // start at 2
   RESULT_TYPE ret = 1;
   for (RESULT_TYPE pre = 1, tmp = 0; x > 2; x--) {
     tmp = pre;
