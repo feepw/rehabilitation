@@ -2,21 +2,25 @@
 #define REHABILITATION_FIBONACCI_H
 
 #include <stdexcept>
+#include <type_traits>
 
 namespace rehabilitation {
 
-template <typename RESULT_TYPE = unsigned int, typename INPUT_TYPE>
-constexpr RESULT_TYPE fibonacci(INPUT_TYPE x) {
+template <typename ResultT = unsigned int,
+          typename InputT,
+          typename = std::enable_if_t<std::is_integral<ResultT>::value &&
+                                      std::is_integral<InputT>::value>>
+constexpr ResultT fibonacci(InputT x) {
   if (x < 0) {
-    throw(std::invalid_argument("fibonacci forbid negative input"));
+    throw std::invalid_argument("fibonacci forbid negative input");
   }
   if (x == 0 || x == 1) {
     return x;
   }
 
   // start at 2
-  RESULT_TYPE ret = 1;
-  for (RESULT_TYPE pre = 1, tmp = 0; x > 2; x--) {
+  ResultT ret = 1;
+  for (ResultT pre = 1, tmp = 0; x > 2; x--) {
     tmp = pre;
     pre = ret;
     ret += tmp;
