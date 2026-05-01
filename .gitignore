@@ -60,3 +60,6 @@ CMakeUserPresets.json
 # clang
 /.clangd
 
+# code agents
+/.agents/*
+
