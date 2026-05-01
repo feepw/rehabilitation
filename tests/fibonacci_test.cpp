@@ -19,6 +19,10 @@ TEST(FibonacciTests, TestBasicSequences) {
       {10, 55}
   };
   for (auto ci = data.cbegin(), ce = data.cend(); ci != ce; ci++) {
-    ASSERT_EQ(rehabilitation::fibonacci(ci->first), ci->second);
+    EXPECT_EQ(rehabilitation::fibonacci(ci->first), ci->second);
   }
+}
+
+TEST(FibonacciTests, TestException) {
+  ASSERT_THROW(rehabilitation::fibonacci(49), std::range_error);
 }
