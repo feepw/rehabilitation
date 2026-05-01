@@ -1,6 +1,7 @@
 #include <cstdint>
+#include <stdexcept>
 
-constexpr std::uint32_t fibonacci(int x) {
+constexpr std::uint32_t fibonacci(std::uint32_t x) {
   if (x == 0 || x == 1) {
     return x;
   }
@@ -11,6 +12,9 @@ constexpr std::uint32_t fibonacci(int x) {
     tmp = pre;
     pre = ret;
     ret += tmp;
+    if (ret < pre) {
+      throw std::range_error("fibonacci calculation caused overflow");
+    }
   }
   return ret;
 }
