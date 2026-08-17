@@ -1,5 +1,5 @@
+#include <stdexcept>
 #include <unordered_map>
-#include <limits>
 
 #include "gtest/gtest.h"
 
@@ -22,4 +22,10 @@ TEST(FibonacciTests, TestBasicSequences) {
   for (auto ci = data.cbegin(), ce = data.cend(); ci != ce; ci++) {
     EXPECT_EQ(rehabilitation::fibonacci::fibonacci(ci->first), ci->second);
   }
+}
+
+TEST(FibonacciTests, TestException) {
+  // static_cast<void> explicitly discards the [[nodiscard]] return value.
+  EXPECT_THROW(static_cast<void>(rehabilitation::fibonacci::fibonacci(-1)),
+               std::overflow_error);
 }
