@@ -2,11 +2,12 @@
 #define RH_FIBONACCI_H
 
 #include "rehabilitation/fibonacci/fibonacci_v1.h"
+#include "rehabilitation/fibonacci/fibonacci_v2.h"
 
 namespace rehabilitation {
 
 // NOLINTNEXTLINE(misc-unused-alias-decls)
-namespace fibonacci = rehabilitation::fibonacci_v1;
+namespace fibonacci = rehabilitation::fibonacci_v2;
 
 }
 
